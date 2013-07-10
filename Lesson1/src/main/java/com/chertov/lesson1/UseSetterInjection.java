@@ -10,7 +10,7 @@ public class UseSetterInjection {
 		ctx.refresh();
 		
 		MessageRenderer messageRenderer = ctx.getBean("messageRenderer", MessageRenderer.class);
-		messageRenderer.render();
+		messageRenderer.render(); 
 	}
 
 }
