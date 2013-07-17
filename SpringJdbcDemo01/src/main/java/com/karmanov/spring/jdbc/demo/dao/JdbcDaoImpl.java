@@ -12,7 +12,6 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import com.karmanov.spring.jdbc.demo.model.Circle;
@@ -26,8 +25,6 @@ public class JdbcDaoImpl {
 
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	
-	private SimpleJdbcTemplate simpleJdbcTemplate;
-
 	public Circle getCircleForId(int circleId) {
 		String sql = "SELECT * FROM CIRCLE WHERE ID = ?";
 		return jdbcTemplate.queryForObject(sql, new Object[] { circleId },
