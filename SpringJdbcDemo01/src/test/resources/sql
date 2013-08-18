@@ -1,0 +1,2 @@
+create table circle (id integer, name char(50));
+insert into circle values (1, 'First Circle'); 
