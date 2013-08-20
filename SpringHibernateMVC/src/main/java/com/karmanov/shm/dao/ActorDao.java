@@ -8,5 +8,7 @@ public interface ActorDao extends AbstractDao<Actor, String> {
 	
 	public List<Actor> findActors();
 	
+	public List<Actor> findPaggedActors(Integer page, Integer maxResults);
+	
 
 }

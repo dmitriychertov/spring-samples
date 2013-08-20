@@ -11,7 +11,7 @@ import com.karmanov.shm.domain.Actor;
 import com.karmanov.shm.service.ActorService;
 
 @Service("actorService")
-@Transactional(readOnly = true)
+@Transactional
 public class ActorServiceImpl implements ActorService {
 
 	@Autowired
@@ -26,6 +26,10 @@ public class ActorServiceImpl implements ActorService {
 	@Override
 	public List<Actor> findActors() {
 		return actorDao.findActors();
+	}
+	
+	public List<Actor> findPaggedActors(Integer page) {
+		return actorDao.findPaggedActors(page, 20);
 	}
 
 }

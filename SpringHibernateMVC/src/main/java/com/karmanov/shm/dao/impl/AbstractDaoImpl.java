@@ -14,8 +14,6 @@ public class AbstractDaoImpl<E, I extends Serializable> implements
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	private Session session;
-
 	private Class<E> entityClass;
 
 	public AbstractDaoImpl(Class<E> entityClass) {
@@ -27,12 +25,8 @@ public class AbstractDaoImpl<E, I extends Serializable> implements
 	}
 
 	public Session getCurrentSession() {
-		if (session == null) {
-			session = sessionFactory.openSession();
-		} else {
-			sessionFactory.getCurrentSession();
-		}
-		return session;
+//		System.out.println("==========================> " + sessionFactory.getCurrentSession() == null);
+		return sessionFactory.openSession();
 	}
 
 }

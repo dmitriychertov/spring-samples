@@ -8,4 +8,6 @@ public interface ActorService {
 	
 	List<Actor> findActors();
 	
+	public List<Actor> findPaggedActors(Integer page);
+	
 }
